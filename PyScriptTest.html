@@ -31,13 +31,16 @@
       
       from js import document, FileReader
       from pyodide import create_proxy
-
+      
+      df = pd.DataFrame()
+      
       async def process_file(event):
         fileList = event.target.files.to_py()
 
         for f in fileList:
           data = await f.text()
           document.getElementById("content").innerHTML = data
+          df = pd.read_fwf(data)
 
       def main():
         # Create a Python proxy for the callback function
@@ -50,8 +53,8 @@
 
       main()
       
-      url_content = open_url("https://armandogarciaitsoeh.github.io/ArmandoGarciaItsoeh/Reg1.csv")
-      df = pd.read_csv(url_content, names=['X', 'Y'])
+      #url_content = open_url("https://armandogarciaitsoeh.github.io/ArmandoGarciaItsoeh/Reg1.csv")
+      #df = pd.read_csv(url_content, names=['X', 'Y'])
 
       x = df.iloc[:,0].to_numpy()
       y = df.iloc[:,1].to_numpy()
