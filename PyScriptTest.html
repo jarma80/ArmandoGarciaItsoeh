@@ -41,6 +41,7 @@
           data = await f.text()
           document.getElementById("content").innerHTML = data
           df = pd.read_html(data)
+        processData()
 
       def main():
         # Create a Python proxy for the callback function
@@ -55,27 +56,28 @@
       
       #url_content = open_url("https://armandogarciaitsoeh.github.io/ArmandoGarciaItsoeh/Reg1.csv")
       #df = pd.read_csv(url_content, names=['X', 'Y'])
+      
+      def processData():     
+        x = df.iloc[:,0].to_numpy()
+        y = df.iloc[:,1].to_numpy()
 
-      x = df.iloc[:,0].to_numpy()
-      y = df.iloc[:,1].to_numpy()
+        xm = x.mean()
+        ym = y.mean()
+        m = sum( (x - xm) * (y - ym) ) / sum((x - xm)**2)
+        b = ym - m*xm
 
-      xm = x.mean()
-      ym = y.mean()
-      m = sum( (x - xm) * (y - ym) ) / sum((x - xm)**2)
-      b = ym - m*xm
-
-      xlinea = np.linspace(x.min(), x.max(), 30)
-      ylinea = m*xlinea + b
-      ley = "y = " + str(m) + " + " + str(b)
-      plt.figure(figsize=(10,10))
-      plt.title(label="Regresión Lineal. García Bautista Jorge Armando", fontsize=20 )
-      plt.scatter(x,y, label = "Datos")
-      plt.plot(xlinea, ylinea, label = ley, color = 'salmon')
-      plt.legend()
-      plt.xlabel("X")
-      plt.ylabel("Y")
-      display(plt, target="graph-area", append=False)
-      display(df, target="csv", append=True)
+        xlinea = np.linspace(x.min(), x.max(), 30)
+        ylinea = m*xlinea + b
+        ley = "y = " + str(m) + " + " + str(b)
+        plt.figure(figsize=(10,10))
+        plt.title(label="Regresión Lineal. García Bautista Jorge Armando", fontsize=20 )
+        plt.scatter(x,y, label = "Datos")
+        plt.plot(xlinea, ylinea, label = ley, color = 'salmon')
+        plt.legend()
+        plt.xlabel("X")
+        plt.ylabel("Y")
+        display(plt, target="graph-area", append=False)
+        display(df, target="csv", append=True)
     </py-script>
 
     <py-repl>
