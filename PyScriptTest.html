@@ -18,7 +18,7 @@ from matplotlib import pyplot as plt
 from pyodide.http import open_url
 
 url_content = open_url("https://armandogarciaitsoeh.github.io/ArmandoGarciaItsoeh/Reg1.csv")
-df = pd.read_csv(url_content)
+df = pd.read_csv(url_content, names=['X', 'Y'])
 
 csv = Element('csv')
 csv.write(df)
