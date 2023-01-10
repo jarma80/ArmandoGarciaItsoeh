@@ -40,7 +40,7 @@
         for f in fileList:
           data = await f.text()
           document.getElementById("content").innerHTML = data
-          df = pd.read_html(data)
+          df = pd.read_html(document.getElementById("content"))
         processData()
 
       def main():
