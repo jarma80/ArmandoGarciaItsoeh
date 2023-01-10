@@ -57,7 +57,7 @@
       #url_content = open_url("https://armandogarciaitsoeh.github.io/ArmandoGarciaItsoeh/Reg1.csv")
       #df = pd.read_csv(url_content, names=['X', 'Y'])
       
-      def processData():     
+      async def processData():     
         x = df.iloc[:,0].to_numpy()
         y = df.iloc[:,1].to_numpy()
 
