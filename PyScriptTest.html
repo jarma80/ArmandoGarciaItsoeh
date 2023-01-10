@@ -19,8 +19,6 @@ from pyodide.http import open_url
 
 url_content = open_url("https://armandogarciaitsoeh.github.io/ArmandoGarciaItsoeh/PyScriptTest.html")
 df = pd.read_csv(url_content)
-csv = Element('csv')
-csv.write(df.head())
       
 x = np.array( [1.20,1.21,1.22,1.23,1.24,1.25,1.26,1.27,1.28,1.29,1.30] )
 y = np.array( [1,4,4,2,1,2,3,3,4,3,3] )
@@ -31,6 +29,7 @@ plt.title("Estatura de niños. García Bautista Jorge Armando 2C")
 plt.xlabel("Altura")
 plt.ylabel("Niños")
 display(plt, target="graph-area", append=False)
+display(df, target="csv"), append=True)
     </py-script>
 
     <py-repl>
