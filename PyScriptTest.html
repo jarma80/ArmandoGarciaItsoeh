@@ -12,44 +12,38 @@
     </py-config>
 
     <py-script>
-import numpy as np
-import pandas as pd
-from matplotlib import pyplot as plt
-from pyodide.http import open_url
+      import numpy as np
+      import pandas as pd
+      from matplotlib import pyplot as plt
+      from pyodide.http import open_url
 
-url_content = open_url("https://armandogarciaitsoeh.github.io/ArmandoGarciaItsoeh/Reg1.csv")
-df = pd.read_csv(url_content, names=['X', 'Y'])
+      url_content = open_url("https://armandogarciaitsoeh.github.io/ArmandoGarciaItsoeh/Reg1.csv")
+      df = pd.read_csv(url_content, names=['X', 'Y'])
 
-#csv = Element('csv')
-#csv.write(df)
+      x = df.iloc[:,0].to_numpy()
+      y = df.iloc[:,1].to_numpy()
 
-#x = np.array( [1.20,1.21,1.22,1.23,1.24,1.25,1.26,1.27,1.28,1.29,1.30] )
-#y = np.array( [1,4,4,2,1,2,3,3,4,3,3] )
+      xm = x.mean()
+      ym = y.mean()
+      m = sum( (x - xm) * (y - ym) ) / sum((x - xm)**2)
+      b = ym - m*xm
 
-x = df.iloc[:,0].to_numpy()
-y = df.iloc[:,1].to_numpy()
-      
-xm = x.mean()
-ym = y.mean()
-m = sum( (x - xm) * (y - ym) ) / sum((x - xm)**2)
-b = ym - m*xm
-      
-xlinea = np.linspace(x.min(), x.max(), 30)
-ylinea = m*xlinea + b
-ley = "y = " + str(m) + " + " + str(b)
-plt.figure(figsize=(10,10))
-plt.title(label="Regresión Lineal. García Bautista Jorge Armando", fontsize=20 )
-plt.scatter(x,y, label = "Datos")
-plt.plot(xlinea, ylinea, label = ley, color = 'salmon')
-plt.legend()
-plt.xlabel("X")
-plt.ylabel("Y")
-display(plt, target="graph-area", append=False)
-display(df, target="csv", append=True)
+      xlinea = np.linspace(x.min(), x.max(), 30)
+      ylinea = m*xlinea + b
+      ley = "y = " + str(m) + " + " + str(b)
+      plt.figure(figsize=(10,10))
+      plt.title(label="Regresión Lineal. García Bautista Jorge Armando", fontsize=20 )
+      plt.scatter(x,y, label = "Datos")
+      plt.plot(xlinea, ylinea, label = ley, color = 'salmon')
+      plt.legend()
+      plt.xlabel("X")
+      plt.ylabel("Y")
+      display(plt, target="graph-area", append=False)
+      display(df, target="csv", append=True)
     </py-script>
 
     <py-repl>
-      ice_data
+      
     </py-repl>
 
     <div id="graph-area"></div>
