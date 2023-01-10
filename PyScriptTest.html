@@ -40,7 +40,7 @@
         for f in fileList:
           data = await f.text()
           document.getElementById("content").innerHTML = data
-          df = pd.DataFrame(data)
+          df = pd.read_html(data)
 
       def main():
         # Create a Python proxy for the callback function
