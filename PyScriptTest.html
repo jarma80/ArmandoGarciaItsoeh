@@ -67,8 +67,8 @@
       async def processData():     
         x = df.iloc[:,0].to_numpy()
         y = df.iloc[:,1].to_numpy()
-        #print(x)
-        #print(y)
+        print(x)
+        print(y)
         xm = x.mean()
         ym = y.mean()
         m = sum( (x - xm) * (y - ym) ) / sum((x - xm)**2)
@@ -84,7 +84,7 @@
         plt.legend()
         plt.xlabel("X")
         plt.ylabel("Y")
-        display(plt, target="graph-area", append=False)
+        display(plt, target="graph-area", append=True)
         #display(df, target="csv", append=True)
         return
       
