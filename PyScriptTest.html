@@ -46,21 +46,12 @@
           for item in dat:
             s = item.split(',')
             if len(s) == 2:
-              #print(i)  
-              #print(s[0])
-              #print(s[1])
-      
-              
-              #df.append({'X': str(s[0]), 'Y':str(s[1]) }, ignore_index=True)
               new_row = [ s[0], s[1] ]
-              #print(new_row)
-      
               df.loc[len(df)] = new_row
-              #df.loc[-1] = new_row
-              #i=i+1
                       
         print(df)
-        processData()
+        return
+        
 
       def main():
         # Create a Python proxy for the callback function
@@ -70,11 +61,7 @@
         # Set the listener to the callback
         e = document.getElementById("myfile")
         e.addEventListener("change", file_event, False)
-
-      main()
-      
-      #url_content = open_url("https://armandogarciaitsoeh.github.io/ArmandoGarciaItsoeh/Reg1.csv")
-      #df = pd.read_csv(url_content, names=['X', 'Y'])
+        return
       
       def processData():     
         x = df.iloc[:,0].to_numpy()
@@ -97,6 +84,11 @@
         plt.ylabel("Y")
         display(plt, target="graph-area", append=False)
         display(df, target="csv", append=True)
+        return
+      
+      main()
+      processData()
+      
     </py-script>
 
     <py-repl>
