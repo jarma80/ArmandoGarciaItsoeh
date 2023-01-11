@@ -53,9 +53,10 @@
               
               #df.append({'X': str(s[0]), 'Y':str(s[1]) }, ignore_index=True)
               new_row = [ s[0], s[1] ]
-              print(new_row)
+              #print(new_row)
       
-              df.loc[-1] = new_row
+              df.loc[len(df)] = new_row
+              #df.loc[-1] = new_row
               #i=i+1
                       
         print(df)
