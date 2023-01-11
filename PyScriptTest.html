@@ -7,6 +7,7 @@
   </head>
   <body>
     <h1>Regresión Lineal Simple por mínimos cuadrados</h1>
+    <hr style="width:50%;text-align:left;margin-left:0">
     <br>
       <label for="myfile">Selecciona un archivo de la PC:</label>
       <input type="file" id="myfile" name="myfile">
@@ -29,7 +30,7 @@
       df = pd.DataFrame(columns=['X','Y'])
       
       async def process_file(event):
-        df.drop([0, len(df.index)])
+        #df.drop([0, len(df.index)])
         fileList = event.target.files.to_py()
         i = 0
         for f in fileList:
