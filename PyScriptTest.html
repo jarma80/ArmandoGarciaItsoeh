@@ -28,6 +28,7 @@
       df = pd.DataFrame(columns=['X','Y'])
       
       async def process_file(event):
+        df.iloc[0:0]
         fileList = event.target.files.to_py()
         i = 0
         for f in fileList:
@@ -63,8 +64,8 @@
         
         xlinea = np.linspace(x.min(), x.max(), 30)
         ylinea = m*xlinea + b
-        ley = "y = " + str(m) + " + " + str(b)
-        print(ley)
+        ley = "y = " + str(m) + "x + " + str(b)
+        #print(ley)
         plt.figure(figsize=(10,10))
         plt.title(label="Regresión Lineal. García Bautista Jorge Armando", fontsize=20 )
         plt.scatter(x,y, label = "Datos")
