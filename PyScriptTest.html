@@ -41,9 +41,11 @@
           data = await f.text()
           document.getElementById("content").innerHTML = data
           dat = data.split()
-          print(i)
-          print(dat)
-          i=i+1
+          for item in dat:
+            s = item.split()
+            print(dat)  
+            print(i)
+            i=i+1
           df = pd.read_csv(data)
         processData()
 
