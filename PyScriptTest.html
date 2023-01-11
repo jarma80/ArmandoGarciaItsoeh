@@ -74,8 +74,8 @@
         m = sum( (x - xm) * (y - ym) ) / sum((x - xm)**2)
         b = ym - m*xm
         
-        print(m)
-        print(b)
+        print(str(m))
+        print(str(b))
       
         xlinea = np.linspace(x.min(), x.max(), 30)
         ylinea = m*xlinea + b
@@ -99,7 +99,7 @@
     </py-script>
 
     <py-repl>
-      ok4
+      ok5
     </py-repl>
 
     <div id="graph-area"></div>
