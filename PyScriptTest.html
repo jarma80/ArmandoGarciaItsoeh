@@ -87,17 +87,25 @@
         print(type(y))
       
         
-        '''
-        xm = np.mean(x)
+        
+        xm = x.mean()
+        ym = y.mean()
+        
+        print("x media:")
         print(xm)
-        ym = np.mean(y)
+      
+        print("y media:")
         print(ym)
         m = sum( (x - xm) * (y - ym) ) / sum((x - xm)**2)
         b = ym - m*xm
         
+        print("m:")
         print(str(m))
+        
+        print("b:")
         print(str(b))
       
+        '''
         xlinea = np.linspace(x.min(), x.max(), 30)
         ylinea = m*xlinea + b
         ley = "y = " + str(m) + " + " + str(b)
@@ -122,7 +130,7 @@
     </py-script>
 
     <py-repl>
-      ok8
+      ok1
     </py-repl>
 
     <div id="graph-area"></div>
