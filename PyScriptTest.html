@@ -40,13 +40,16 @@
         for f in fileList:
           data = await f.text()
           document.getElementById("content").innerHTML = data
-          dat = data.split()
-          d = str(dat)
-          for item in d:
-            s = item.split()
-            print(s)  
-            print(i)
-            i=i+1
+          #dat = data.split()
+          dat = str(data).split()
+          print(dat)    
+      
+          #for item in d:
+          #  s = item.split()
+          #  print(s)  
+          #  print(i)
+          #  i=i+1
+          
           df = pd.read_csv(data)
         processData()
 
