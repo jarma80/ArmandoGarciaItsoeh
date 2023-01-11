@@ -41,7 +41,8 @@
           data = await f.text()
           document.getElementById("content").innerHTML = data
           dat = data.split()
-          for item in dat:
+          d = str(dat)
+          for item in d:
             s = item.split()
             print(s)  
             print(i)
