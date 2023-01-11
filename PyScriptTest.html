@@ -29,7 +29,7 @@
       df = pd.DataFrame(columns=['X','Y'])
       
       async def process_file(event):
-        #df = pd.DataFrame(columns=['X','Y'])
+        df.drop([0, len(df. index)])
         fileList = event.target.files.to_py()
         i = 0
         for f in fileList:
