@@ -28,7 +28,7 @@
       df = pd.DataFrame(columns=['X','Y'])
       
       async def process_file(event):
-        df.iloc[0:0]
+        df = pd.DataFrame(columns=['X','Y'])
         fileList = event.target.files.to_py()
         i = 0
         for f in fileList:
@@ -73,7 +73,7 @@
         plt.legend()
         plt.xlabel("X")
         plt.ylabel("Y")
-        display(plt, target="graph-area", append=True)
+        display(plt, target="graph-area", append=False)
         return
       
       main()
