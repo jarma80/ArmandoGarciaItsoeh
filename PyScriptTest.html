@@ -42,17 +42,18 @@
           document.getElementById("content").innerHTML = data
           #dat = data.split()
           dat = str(data).split("\r\n")
-          print(dat)    
+          #print(dat)    
       
           for item in dat:
             s = item.split(',')
             if len(s) == 2:
-              print(i)  
-              print(s)
+              #print(i)  
+              #print(s)
               df.append({'X': s[0], 'Y':s[1] }, ignore_index=True)
-              i=i+1
+              #i=i+1
             
           #df = pd.read_csv(data)
+        print(df)
         processData()
 
       def main():
@@ -69,7 +70,7 @@
       #url_content = open_url("https://armandogarciaitsoeh.github.io/ArmandoGarciaItsoeh/Reg1.csv")
       #df = pd.read_csv(url_content, names=['X', 'Y'])
       
-      async def processData():     
+      def processData():     
         x = df.iloc[:,0].to_numpy()
         y = df.iloc[:,1].to_numpy()
 
