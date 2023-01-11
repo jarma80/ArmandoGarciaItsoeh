@@ -50,6 +50,7 @@
               df.loc[len(df)] = new_row
                       
         print(df)
+        processData()
         return
         
 
@@ -66,7 +67,8 @@
       def processData():     
         x = df.iloc[:,0].to_numpy()
         y = df.iloc[:,1].to_numpy()
-
+        print(x)
+        print(y)
         xm = x.mean()
         ym = y.mean()
         m = sum( (x - xm) * (y - ym) ) / sum((x - xm)**2)
@@ -87,7 +89,7 @@
         return
       
       main()
-      processData()
+      
       
     </py-script>
 
