@@ -73,11 +73,14 @@
         ym = y.mean()
         m = sum( (x - xm) * (y - ym) ) / sum((x - xm)**2)
         b = ym - m*xm
-
+        
+        print(m)
+        print(b)
+      
         xlinea = np.linspace(x.min(), x.max(), 30)
         ylinea = m*xlinea + b
         ley = "y = " + str(m) + " + " + str(b)
-        print(ley)
+        #print(ley)
         plt.figure(figsize=(10,10))
         plt.title(label="Regresión Lineal. García Bautista Jorge Armando", fontsize=20 )
         plt.scatter(x,y, label = "Datos")
