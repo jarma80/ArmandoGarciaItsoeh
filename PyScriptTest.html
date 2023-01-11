@@ -41,11 +41,11 @@
           data = await f.text()
           document.getElementById("content").innerHTML = data
           #dat = data.split()
-          dat = str(data).split()
+          dat = str(data)
           print(dat)    
       
           for item in dat:
-            s = item.split()
+            s = item.split(',')
             print(s)  
             print(i)
             i=i+1
