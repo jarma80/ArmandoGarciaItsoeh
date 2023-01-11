@@ -48,8 +48,9 @@
             s = item.split(',')
             if len(s) == 2:
               #print(i)  
-              #print(s)
-              df.append({'X': s[0], 'Y':s[1] }, ignore_index=True)
+              print(s[0])
+              print(s[1])
+              df.append({'X': str(s[0]), 'Y':str(s[1]) }, ignore_index=True)
               #i=i+1
             
           #df = pd.read_csv(data)
