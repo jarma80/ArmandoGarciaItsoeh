@@ -65,10 +65,7 @@
         e.addEventListener("change", file_event, False)
         return
       
-      def processData():     
-        #x = df.iloc[:,0].to_numpy()
-        #y = df.iloc[:,1].to_numpy()
-        
+      def processData():
         xl = df.iloc[:,0].tolist()
         yl = df.iloc[:,1].tolist()
         
@@ -86,8 +83,6 @@
         print(y)
         print(type(y))
       
-        
-        
         xm = x.mean()
         ym = y.mean()
         
@@ -104,12 +99,11 @@
         
         print("b:")
         print(str(b))
-      
-        '''
+                
         xlinea = np.linspace(x.min(), x.max(), 30)
         ylinea = m*xlinea + b
         ley = "y = " + str(m) + " + " + str(b)
-        #print(ley)
+        print(ley)
         plt.figure(figsize=(10,10))
         plt.title(label="Regresión Lineal. García Bautista Jorge Armando", fontsize=20 )
         plt.scatter(x,y, label = "Datos")
@@ -118,10 +112,6 @@
         plt.xlabel("X")
         plt.ylabel("Y")
         display(plt, target="graph-area", append=True)
-        #display(df, target="csv", append=True)
-        #plt.show()
-        
-        '''
         return
       
       main()
@@ -130,7 +120,7 @@
     </py-script>
 
     <py-repl>
-      ok1
+      ok10
     </py-repl>
 
     <div id="graph-area"></div>
