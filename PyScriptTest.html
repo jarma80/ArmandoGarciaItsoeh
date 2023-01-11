@@ -44,11 +44,11 @@
           dat = str(data).split()
           print(dat)    
       
-          #for item in d:
-          #  s = item.split()
-          #  print(s)  
-          #  print(i)
-          #  i=i+1
+          for item in dat:
+            s = item.split()
+            print(s)  
+            print(i)
+            i=i+1
           
           df = pd.read_csv(data)
         processData()
