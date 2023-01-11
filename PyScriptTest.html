@@ -36,12 +36,14 @@
       
       async def process_file(event):
         fileList = event.target.files.to_py()
-
+        i = 0
         for f in fileList:
           data = await f.text()
           document.getElementById("content").innerHTML = data
           dat = data.split()
+          print(i)
           print(dat)
+          i=i+1
           df = pd.read_csv(data)
         processData()
 
