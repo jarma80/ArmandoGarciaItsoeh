@@ -73,9 +73,10 @@
         print(y)
         print(type(y))
         
-        xm = x.mean()
+        xm = np.mean(x)
         print(xm)
-        ym = y.mean()
+        ym = np.mean(y)
+        print(ym)
         m = sum( (x - xm) * (y - ym) ) / sum((x - xm)**2)
         b = ym - m*xm
         
@@ -104,7 +105,7 @@
     </py-script>
 
     <py-repl>
-      ok6
+      ok
     </py-repl>
 
     <div id="graph-area"></div>
