@@ -69,7 +69,11 @@
         #x = df.iloc[:,0].to_numpy()
         #y = df.iloc[:,1].to_numpy()
         
+        #x = df.iloc[:,0].to_list()
+        xl = df.iloc[:,0].tolist()
+      
         x = np.array([-4,-3,-2,-1,0,1,2,3,4])
+        x = np.array(xl)
         x = np.sort(x)
         y = x*x;
         
