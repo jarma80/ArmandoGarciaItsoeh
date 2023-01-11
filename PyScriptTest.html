@@ -50,6 +50,7 @@
               df.loc[len(df)] = new_row
                       
         #print(df)
+        
         processData()
         return
         
@@ -68,7 +69,9 @@
         x = df.iloc[:,0].to_numpy()
         y = df.iloc[:,1].to_numpy()
         print(x)
+        print(type(x))
         print(y)
+        print(type(y))
         
         xm = x.mean()
         print(xm)
@@ -101,7 +104,7 @@
     </py-script>
 
     <py-repl>
-      ok5
+      ok6
     </py-repl>
 
     <div id="graph-area"></div>
