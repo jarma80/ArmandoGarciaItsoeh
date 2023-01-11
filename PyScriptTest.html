@@ -40,7 +40,6 @@
         for f in fileList:
           data = await f.text()
           document.getElementById("content").innerHTML = data
-          #dat = data.split()
           dat = str(data).split("\r\n")
           #print(dat)    
       
@@ -51,13 +50,12 @@
               #print(s[0])
               #print(s[1])
       
-              list = ["X", s[0], "Y", s[1]]
-              df.loc[len(df)] = list
-              #df.append({'X': str(s[0]), 'Y':str(s[1]) }, ignore_index=True)
+              #list = ["X", s[0], "Y", s[1]]
+              #df.loc[len(df)] = list
+              df.append({'X': str(s[0]), 'Y':str(s[1]) }, ignore_index=True)
               print(df)
               #i=i+1
-            
-          #df = pd.read_csv(data)
+                      
         #print(df)
         processData()
 
