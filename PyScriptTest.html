@@ -70,17 +70,18 @@
         #y = df.iloc[:,1].to_numpy()
         
         xl = df.iloc[:,0].tolist()
+        yl = df.iloc[:,1].tolist()
         
         print("Lista:")
         print(xl)
+        print(yl)
+      
         x = np.array(xl).astype(np.float)
         print("x Numpy array:")
         print(x)
-      
-        x = np.sort(x)
-        y = x*x;
-        
         print(type(x))
+      
+        y = np.array(xl).astype(np.float)      
         print("y Numpy array:")
         print(y)
         print(type(y))
@@ -121,7 +122,7 @@
     </py-script>
 
     <py-repl>
-      ok6
+      ok7
     </py-repl>
 
     <div id="graph-area"></div>
