@@ -67,9 +67,11 @@
       def processData():     
         x = df.iloc[:,0].to_numpy()
         y = df.iloc[:,1].to_numpy()
-        #print(x)
-        #print(y)
+        print(x)
+        print(y)
+        
         xm = x.mean()
+        print(xm)
         ym = y.mean()
         m = sum( (x - xm) * (y - ym) ) / sum((x - xm)**2)
         b = ym - m*xm
