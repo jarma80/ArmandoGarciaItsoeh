@@ -50,7 +50,7 @@
               df.loc[len(df)] = new_row
                       
         #print(df)
-        processData()
+        await processData()
         return
         
 
@@ -64,7 +64,7 @@
         e.addEventListener("change", file_event, False)
         return
       
-      def processData():     
+      async def processData():     
         x = df.iloc[:,0].to_numpy()
         y = df.iloc[:,1].to_numpy()
         #print(x)
