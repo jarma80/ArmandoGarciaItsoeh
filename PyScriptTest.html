@@ -7,17 +7,10 @@
   </head>
   <body>
     <br>
-      <label for="myfile">Select a file:</label>
+      <label for="myfile">Selecciona un archivo de la PC:</label>
       <input type="file" id="myfile" name="myfile">
     <br/>
     
-    <p>File Content:</p>
-    <div style="border:2px inset #AAA;cursor:text;height:120px;overflow:auto;width:600px; resize:both">
-      <div id="content">
-      </div>
-    </div>
-    
-    <p id="csv"></p>
     <py-config>
       packages = ["matplotlib", "pandas"]
     </py-config>
@@ -39,28 +32,19 @@
         i = 0
         for f in fileList:
           data = await f.text()
-          document.getElementById("content").innerHTML = data
           dat = str(data).split("\r\n")
-          #print(dat)    
       
           for item in dat:
             s = item.split(',')
             if len(s) == 2:
               new_row = [ s[0], s[1] ]
               df.loc[len(df)] = new_row
-                      
-        #print(df)
         
         processData()
         return
-        
 
       def main():
-        # Create a Python proxy for the callback function
-        # process_file() is your function to process events from FileReader
         file_event = create_proxy(process_file)
-
-        # Set the listener to the callback
         e = document.getElementById("myfile")
         e.addEventListener("change", file_event, False)
         return
@@ -68,38 +52,15 @@
       def processData():
         xl = df.iloc[:,0].tolist()
         yl = df.iloc[:,1].tolist()
-        
-        print("Lista:")
-        print(xl)
-        print(yl)
       
         x = np.array(xl).astype(np.single)
-        print("x Numpy array:")
-        print(x)
-        print(type(x))
-      
         y = np.array(yl).astype(np.single)      
-        print("y Numpy array:")
-        print(y)
-        print(type(y))
-      
         xm = x.mean()
         ym = y.mean()
-        
-        print("x media:")
-        print(xm)
       
-        print("y media:")
-        print(ym)
         m = sum( (x - xm) * (y - ym) ) / sum((x - xm)**2)
         b = ym - m*xm
         
-        print("m:")
-        print(str(m))
-        
-        print("b:")
-        print(str(b))
-                
         xlinea = np.linspace(x.min(), x.max(), 30)
         ylinea = m*xlinea + b
         ley = "y = " + str(m) + " + " + str(b)
@@ -115,14 +76,8 @@
         return
       
       main()
-      
-      
     </py-script>
-
-    <py-repl>
-      ok10
-    </py-repl>
-
+    
     <div id="graph-area"></div>
   </body>
 </html>
