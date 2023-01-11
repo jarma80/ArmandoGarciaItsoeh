@@ -49,7 +49,7 @@
               new_row = [ s[0], s[1] ]
               df.loc[len(df)] = new_row
                       
-        print(df)
+        #print(df)
         processData()
         return
         
@@ -67,8 +67,8 @@
       def processData():     
         x = df.iloc[:,0].to_numpy()
         y = df.iloc[:,1].to_numpy()
-        print(x)
-        print(y)
+        #print(x)
+        #print(y)
         xm = x.mean()
         ym = y.mean()
         m = sum( (x - xm) * (y - ym) ) / sum((x - xm)**2)
@@ -94,7 +94,7 @@
     </py-script>
 
     <py-repl>
-      
+      ice_cream
     </py-repl>
 
     <div id="graph-area"></div>
