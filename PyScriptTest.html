@@ -32,7 +32,7 @@
       from js import document, FileReader
       from pyodide import create_proxy
       
-      df = pd.DataFrame()
+      df = pd.DataFrame(columns=['X','Y'])
       
       async def process_file(event):
         fileList = event.target.files.to_py()
@@ -46,11 +46,15 @@
       
           for item in dat:
             s = item.split(',')
-            print(s)  
-            print(i)
+            
+            
+      
+            print(i)  
+            print(s)
+            df.append({'X': s[0], 'Y':s[1] }, ignore_index=True)
             i=i+1
           
-          df = pd.read_csv(data)
+          #df = pd.read_csv(data)
         processData()
 
       def main():
