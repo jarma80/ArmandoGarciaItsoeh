@@ -40,7 +40,8 @@
         for f in fileList:
           data = await f.text()
           document.getElementById("content").innerHTML = data
-          print(data)
+          dat = data.split()
+          print(dat)
           df = pd.read_csv(data)
         processData()
 
