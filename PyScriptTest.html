@@ -20,7 +20,7 @@
     <table id="pandas-area" class="table table-striped">
       <thead>
         <tr>
-          <th scope="col">X</th>
+          <th scope="col">X1</th>
           <th scope="col">Y</th>
         </tr>
       </thead>
@@ -90,8 +90,8 @@ def processData():
     plt.xlabel("X")
     plt.ylabel("Y")
     element = document.getElementById("content")
-    #for xdat,ydat in zip(x,y):
-    #    element.append( create_html_element(xdat,ydat) )
+    for xdat,ydat in zip(x,y):
+    	element.append( create_html_element(xdat,ydat) )
     #display(df, target="content", append=True)
     display(plt, target="graph-area", append=True)
     return
