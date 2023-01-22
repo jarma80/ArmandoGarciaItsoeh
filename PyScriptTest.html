@@ -17,16 +17,7 @@
       <input class="form-control" type="file" id="myfile">
     </div>
     
-    <table id="pandas-area" class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">X</th>
-          <th scope="col">Y</th>
-        </tr>
-      </thead>
-	  <tbody id="content">
-        </tbody>
-    </table>
+    
     
     <py-config>
       packages = ["matplotlib", "pandas"]
@@ -93,10 +84,10 @@
         
 	
 	element = document.getElementById("content")
-	for xdat,ydat in zip(x,y):
-	    element.append( create_html_element(xdat,ydat) )
+	#for xdat,ydat in zip(x,y):
+	#    element.append( create_html_element(xdat,ydat) )
 	    
-        #display(df, target="content", append=True)
+        display(df, target="content", append=True)
 	#pyscript.write('data', df.head().to_html(classes="table table-striped") )
 	display(plt, target="graph-area", append=True)
         return
@@ -113,7 +104,16 @@
 	    
       main()
     </py-script>
-    <p id="data"></p>
+    <table id="pandas-area" class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">X</th>
+          <th scope="col">Y</th>
+        </tr>
+      </thead>
+	  <tbody id="content">
+        </tbody>
+    </table>
     <div id="graph-area"></div>
   </body>
 </html>
