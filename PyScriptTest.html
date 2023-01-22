@@ -19,14 +19,14 @@
     <table id="pandas-area" class="table table-striped table-md">
 	      <thead class="table-light">
 		<tr>
-		  <th scope="col" class="th-sm">X</th>
-		  <th scope="col" class="th-sm">Y</th>
-		  <th scope="col" class="th-sm">Z</th>
-		  <th scope="col" class="th-sm">W</th>
+		  <th scope="col">X3</th>
+		  <th scope="col">Y</th>
+		  <th scope="col" id="graph-area" colspan="2"></th>
+		  <th scope="col"></th>
 		</tr>
 	      </thead>
 		  <tbody id="content">
-	      </tbody>
+	          </tbody>
 	    </table>  
     <py-config>
       packages = ["matplotlib", "pandas"]
@@ -109,6 +109,6 @@ def create_html_element(xd,yd):
 main()
     </py-script>
     
-    <div id="graph-area"></div>
+    
   </body>
 </html>
