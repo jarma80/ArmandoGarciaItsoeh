@@ -20,7 +20,6 @@
     <table id="pandas-area" class="table table-striped">
       <thead>
         <tr>
-          <th scope="col">#</th>
           <th scope="col">X</th>
           <th scope="col">Y</th>
         </tr>
@@ -92,10 +91,28 @@
         plt.xlabel("X")
         plt.ylabel("Y")
         display(plt, target="graph-area", append=True)
-        display(df, target="content", append=True)
-        #pyscript.write('data', df.head().to_html(classes="table table-striped") )
+	
+	element = document.getElementById("content")
+	for xdat,ydat in zip(x,y):
+	    element.append( create_html_element(xdat,ydat) )
+	    
+        #display(df, target="content", append=True)
+	#pyscript.write('data', df.head().to_html(classes="table table-striped") )
         return
-      
+	    
+      def create_html_element(xd, yd):
+        tr_element = document.createElement('tr')
+        first_name_element = document.createElement('td')
+        last_name_element = document.createElement('td')
+
+        first_name_element.innerText = xd
+        last_name_element.innerText = yd
+        
+        tr_element.append(first_name_element)
+        tr_element.append(last_name_element)
+        
+        return tr_element
+	    
       main()
     </py-script>
     <p id="data"></p>
