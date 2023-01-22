@@ -61,6 +61,12 @@
         #processData()
         return
 	    
+      def main():
+      	file_event = create_proxy(process_file)
+      	e = document.getElementById("myfile")
+      	e.addEventListener("change", file_event, False)
+        return
+	    
     </py-script>
     
     <div id="graph-area"></div>
