@@ -95,6 +95,16 @@ def processData():
     #display(df, target="content", append=True)
     display(plt, target="graph-area", append=True)
     return
+ 
+def create_html_element(xd,yd):
+    tr_element = document.createElement('tr')
+    first_name_element = document.createElement('td')
+    last_name_element = document.createElement('td')
+    first_name_element.innerText = xd
+    last_name_element.innerText = yd
+    tr_element.append(first_name_element)
+    tr_element.append(last_name_element)
+    return tr_element
 
 main()
     </py-script>
