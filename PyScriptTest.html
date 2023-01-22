@@ -80,7 +80,7 @@ def processData():
     ylinea = m*xlinea + b
     ley = "y = " + str(m) + "x + " + str(b)
     #print(ley)
-    plt.figure(figsize=(10,10))
+    plt.figure(figsize=(5,5))
     plt.title(label="Regresión Lineal. García Bautista Jorge Armando", fontsize=20 )
     plt.scatter(x,y, label = "Datos")
     plt.plot(xlinea, ylinea, label = ley, color = 'salmon')
