@@ -16,9 +16,7 @@
       <label for="myfile" class="form-label">Selecciona un archivo de la PC:</label>
       <input class="form-control" type="file" id="myfile">
     </div>
-    
-    
-    
+
     <py-config>
       packages = ["matplotlib", "pandas"]
     </py-config>
@@ -81,26 +79,13 @@
         plt.legend()
         plt.xlabel("X")
         plt.ylabel("Y")
-        
-	
 	element = document.getElementById("content")
 	#for xdat,ydat in zip(x,y):
 	#    element.append( create_html_element(xdat,ydat) )
-	    
         display(df, target="content", append=True)
 	#pyscript.write('data', df.head().to_html(classes="table table-striped") )
 	display(plt, target="graph-area", append=True)
         return
-	    
-      def create_html_element(xd, yd):
-	tr_element = document.createElement('tr')
-	first_name_element = document.createElement('td')
-	last_name_element = document.createElement('td')
-	first_name_element.innerText = xd
-	last_name_element.innerText = yd
-	tr_element.append(first_name_element)
-	tr_element.append(last_name_element)
-	return tr_element
 	    
       main()
     </py-script>
