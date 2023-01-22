@@ -17,6 +17,18 @@
       <input class="form-control" type="file" id="myfile">
     </div>
     
+    <table id="pandas-area" class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">X</th>
+          <th scope="col">Y</th>
+        </tr>
+      </thead>
+	  <tbody id="content">
+        </tbody>
+    </table>
+    
     <py-config>
       packages = ["matplotlib", "pandas"]
     </py-config>
@@ -80,8 +92,8 @@
         plt.xlabel("X")
         plt.ylabel("Y")
         display(plt, target="graph-area", append=True)
-        #display(df, target="pandas-area", append=True)
-        pyscript.write('data', df.head().to_html(classes="table table-striped") )
+        display(df, target="content", append=True)
+        #pyscript.write('data', df.head().to_html(classes="table table-striped") )
         return
       
       main()
