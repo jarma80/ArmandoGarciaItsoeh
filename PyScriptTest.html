@@ -80,20 +80,13 @@
         plt.xlabel("X")
         plt.ylabel("Y")
         display(plt, target="graph-area", append=True)
-        display(df, target="pandas-area", append=True)
+        #display(df, target="pandas-area", append=True)
+        pyscript.write('data', df.head().to_html(classes="table table-striped") )
         return
       
       main()
     </py-script>
-    <table id="pandas-area" class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">X</th>
-          <th scope="col">Y</th>
-        </tr>
-      </thead>
-    </table>
+    <p id="data"></p>
     <div id="graph-area"></div>
   </body>
 </html>
